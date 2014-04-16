@@ -17,6 +17,7 @@ class Reason(models.Model):
         return self.reason
 	
 class Ticket(models.Model):
+    citation_number = models.CharField(max_length=255)
     date = models.DateField()
     location = models.ForeignKey(Location)
     reason = models.ForeignKey(Reason)
