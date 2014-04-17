@@ -1,0 +1,5 @@
+<h1>All tickets at {{ loc }}</h1>
+
+{% for object in tickets %}
+<p>A ticket was written on {{ object.date }} at {{ object.location }}</p>
+{% endfor %}

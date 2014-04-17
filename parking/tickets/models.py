@@ -18,7 +18,7 @@ class Reason(models.Model):
 	
 class Ticket(models.Model):
     citation_number = models.CharField(max_length=255)
-    date = models.DateField()
+    date = models.DateTimeField()
     location = models.ForeignKey(Location)
     reason = models.ForeignKey(Reason)
     def get_absolute_url(self):
