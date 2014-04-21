@@ -1,5 +1,12 @@
-<h1>All tickets at {{ loc }}</h1>
+{% extends "base.html"}
 
-{% for object in tickets %}
+{% block title %}All tickets at {{ loc }}{% endblock %}
+
+
+{% block header %}All tickets at {{ loc }}{% endblock %}
+
+{% block content %}{% for object in tickets %}
 <p>A ticket was written on {{ object.date }} at {{ object.location }}</p>
-{% endfor %}
+{% endfor %}{% endblock %}
+
+
