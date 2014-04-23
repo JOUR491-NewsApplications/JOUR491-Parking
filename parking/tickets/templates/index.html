@@ -1,4 +1,4 @@
-{% extends "base.html"}
+{% extends "base.html" %}
 
 {% block title %}{% endblock %}
 
@@ -7,8 +7,12 @@
 
 {% block content %}
 
+<div class="chart">
 {% for loc in locations %}
-<p><a href="{{ loc.get_absolute_url }}">{{ loc.location }}</a></p>
-{% endfor %}
+  <div style="width: {% widthratio loc.ticket__count 60590 6000 %}px;" ><a href="{{ loc.get_absolute_url }}">{{ loc.location }}</a>: {{ loc.ticket__count }}</div>
+{% endfor %}</div>
+
+
+
 
 {% endblock %}

@@ -4,7 +4,7 @@ class Location(models.Model):
     location = models.CharField(max_length=255)
     location_slug = models.CharField(max_length=255)
     def get_absolute_url(self):
-        return "/locations/%s/" % self.location_slug
+        return "http://127.0.0.1:8000/locations/%s/" % self.location_slug
     def __unicode__(self):
         return self.location
 

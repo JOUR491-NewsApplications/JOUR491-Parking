@@ -1,12 +1,24 @@
-{% extends "base.html"}
+{% extends "base.html" %}
 
 {% block title %}All tickets at {{ loc }}{% endblock %}
 
 
 {% block header %}All tickets at {{ loc }}{% endblock %}
 
-{% block content %}{% for object in tickets %}
-<p>A ticket was written on {{ object.date }} at {{ object.location }}</p>
-{% endfor %}{% endblock %}
+{% block content %}
 
+{% regroup tickets by date|date:"N Y" as month_list %}
 
+<ul>
+{% for thing in month_list %}
+    <li><strong>{{ thing.grouper }}</strong><br />
+    <ul>
+        {% for item in thing.list %}
+          <li style="padding-left:10px;">{{ item.date }}: {{ item.location.name }} for {{ item.reason }}</li>
+        {% endfor %}
+    </ul>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
