@@ -7,6 +7,17 @@
 
 {% block content %}
 
+<div class="chart">
+{% for month in months %}
+  <div style="width: {% widthratio month.date__count total 6000 %}px;" >{{ month.month }}: {{ month.date__count }}</div>
+{% endfor %}</div>
+
+
+
+
+
+
+
 {% regroup tickets by date|date:"N Y" as month_list %}
 
 <ul>
