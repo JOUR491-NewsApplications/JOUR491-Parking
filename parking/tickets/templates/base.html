@@ -689,8 +689,6 @@ oTNCMS_Ad.show(null, null, 'http://bloximages.newyork1.vip.townnews.com/dailyneb
     <div class="clearfix"></div>
     <header id="article-header">
 {% block header %}
-        <h1>Where should you park?</h1>
-        <span>Some text here</span>
 {% endblock %}
     </header>
     <div class="row">
@@ -698,8 +696,9 @@ oTNCMS_Ad.show(null, null, 'http://bloximages.newyork1.vip.townnews.com/dailyneb
         <!-- Standard Story Page -->
         <div id="article-content" class="col-md-8">
             <div id="article-image" class="content-container left">
-With or without a permit, finding parking on the University of Nebraska-Lincoln’s City and East campuses can be a struggle.  In 2014, 24,445 students, some of whom commute and some who live on campus, are vying for lot and meter spots. And that’s not even counting UNL administrators, faculty, staff and visitors. So where should you park? Well, where can you park without getting a ticket? 
+            {% block viz %}{% endblock %}
             </div>
+            
             <div class="content-container left">
 {% block content %}
 
@@ -707,6 +706,8 @@ Your stuff here.
 
 {% endblock %}
 			</div>
+What are your options?
+There are three ways you can park at UNL: Buy a permit to park in a lot, park at a meter or park off campus and walk. Students can buy commuter or resident parking permits for a year, nine months or a semester. These cost several hundred dollars. In 2013, about 70 percent of UNL Parking & Transit Services’ revenue came from permits. Just 5 percent came from citations. Here are some permit options. 
 			<h4><a id="commutercity" name="commutercity"></a> <strong>Student Commuter Permits</strong> <span style="font-size: .7em;">(For Students Who Primarily Attend Classes On City Campus)</span></h4>
 <table style="padding-left: 20px;">
 <thead>
