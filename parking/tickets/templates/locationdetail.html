@@ -3,16 +3,19 @@
 {% block title %}All tickets at {{ loc }}{% endblock %}
 
 
-{% block header %}<h1>All tickets at</h1> {{ loc }}{% endblock %}
+{% block header %}<h1>All tickets at {{ loc }}</h1>{% endblock %}
 
-{% block content %}
-
+{% block viz %}<p> Data for tickets given by month.</p>
 <div class="chart">
 {% for month in months %}
   <div style="width: {% widthratio month.date__count total 6000 %}px;" >{{ month.month|date:"N Y" }}: {{ month.date__count }}
 </div>
 {% endfor %}</div>
+{% endblock %}
 
+{% block content %}
+
+<h3>Here are the tickets written at {{ loc }} for the last two years</h3>
 
 {% regroup tickets by date|date:"N Y" as month_list %}
 
